@@ -1,0 +1,39 @@
+
+defaults:
+  - _self_  # Override values within this file with values in selected files.device: 0
+
+gpu: 
+
+tta:
+  model:
+    method: # 'tta'
+    use_pretrained_classifier:  # if False, use classifier_init_method to initialize the values for the condition (to diffusion model).
+    classifier_init_method:  # 
+    online: 
+    
+  gradient_descent:
+    base_learning_rate:
+    train_steps:
+    transform_steps:
+    accum_steps:
+
+input: 
+  discr_model: 
+  diff_model:
+  freeze_diff:
+  dataset_name:
+  dataset_path:
+  dataset_phase:
+  dataset_shuffle:
+  upper_bound:
+  lower_bound: 
+  batch_size:
+  testdata_start_index:
+  testdata_end_index:
+  testdatasize:
+
+hydra:
+  run:
+    dir: ./tta/outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+
+

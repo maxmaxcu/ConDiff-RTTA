@@ -1,0 +1,1 @@
+python applytta.py +experiment/para=config0

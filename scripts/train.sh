@@ -1,0 +1,1 @@
+torchrun --standalone --nproc_per_node=8 train.py --transfer=xxxx.pkl --outdir=training-runs --data=./data/ --data-class=TCIRDataset --cond=1 --arch=ddpmpp --batch=128 --augment=0.12 --duration=3 --snap 10 --label_dropout 0.0 

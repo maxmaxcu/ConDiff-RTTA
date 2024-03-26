@@ -1,0 +1,33 @@
+# @package _global_
+
+gpu: 0
+
+tta:
+  model:
+    method: tta
+    use_pretrained_classifier: False # if False, use classifier_init_method to initialize the values for the condition (to diffusion model).
+    classifier_init_method: 50 # define the initial condition.
+    online: False
+  gradient_descent:
+    base_learning_rate: 9
+    base_trans_learning_rate: 10e-4
+    train_steps: 50 
+    transform_steps: 25
+    accum_steps: 5    
+  
+input: 
+  discr_model: ../../../../training-runs/xxxx.pt
+  diff_model: ../../../../training-runs/xxxxx.pkl
+  freeze_diff: True 
+  dataset_name: TCIRDataset_TTA
+  dataset_path: ../../../../data/
+  dataset_phase: test # train, valid, test
+  dataset_shuffle: False
+  upper_bound: 180
+  lower_bound: 15
+  batch_size: 40  # 40
+  testdata_start_index: 0
+  testdata_end_index: -1
+  testdatasize: 0
+
+
